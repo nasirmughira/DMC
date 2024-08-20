@@ -1,0 +1,35 @@
+def calculate_percentage(total_marks, obtained_marks):
+  return (obtained_marks / total_marks) * 100
+
+def calculate_grade(percentage):
+  if percentage >= 90:
+    return 'A+'
+  elif percentage >= 80:
+    return 'A'
+  elif percentage >= 70:
+    return 'B'
+  elif percentage >= 60:
+    return 'C'
+  else:
+    return 'D'
+
+students = [
+  {'name': 'Nasir Khan', 'maths': 85, 'science': 92, 'english': 78},
+  {'name': 'Nasir Mughira', 'maths': 75, 'science': 80, 'english': 68}
+]
+
+total_marks = 300  # Assuming 100 marks for each subject
+
+for student in students:
+  total_obtained = student['maths'] + student['science'] + student['english']
+  percentage = calculate_percentage(total_marks, total_obtained)
+  grade = calculate_grade(percentage)
+
+  print("Name:", student['name'])
+  print("Maths:", student['maths'])
+  print("Science:", student['science'])
+  print("English:", student['english'])
+  print("Total Marks:", total_obtained)
+  print("Percentage:", percentage)
+  print("Grade:", grade)
+  print("-" * 20)
